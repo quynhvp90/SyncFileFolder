@@ -68,6 +68,8 @@
             this.folderDestination = new System.Windows.Forms.FolderBrowserDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.btnPre = new System.Windows.Forms.PictureBox();
+            this.btnNext = new System.Windows.Forms.PictureBox();
             this.metroTabControl.SuspendLayout();
             this.metroTabPageSync.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -90,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).BeginInit();
             this.groupHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl
@@ -99,7 +103,7 @@
             this.metroTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.SelectedIndex = 0;
+            this.metroTabControl.SelectedIndex = 1;
             this.metroTabControl.Size = new System.Drawing.Size(816, 404);
             this.metroTabControl.TabIndex = 1;
             this.metroTabControl.UseSelectable = true;
@@ -280,6 +284,8 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.btnNext);
+            this.groupBox8.Controls.Add(this.btnPre);
             this.groupBox8.Controls.Add(this.pictureViewer);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 46);
@@ -516,6 +522,32 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // btnPre
+            // 
+            this.btnPre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPre.BackgroundImage")));
+            this.btnPre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPre.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPre.Location = new System.Drawing.Point(3, 16);
+            this.btnPre.Name = "btnPre";
+            this.btnPre.Size = new System.Drawing.Size(16, 297);
+            this.btnPre.TabIndex = 1;
+            this.btnPre.TabStop = false;
+            this.btnPre.Click += new System.EventHandler(this.btnPre_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnNext.Location = new System.Drawing.Point(624, 16);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(15, 297);
+            this.btnNext.TabIndex = 1;
+            this.btnNext.TabStop = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // syncfilefolder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +581,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).EndInit();
             this.groupHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnPre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,6 +624,8 @@
         private System.Windows.Forms.PictureBox rotate_right;
         private System.Windows.Forms.PictureBox rotate_left;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.PictureBox btnNext;
+        private System.Windows.Forms.PictureBox btnPre;
     }
 }
 

@@ -96,7 +96,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\delete.png" />
     <Content Include="Images\Icon\icon.png" />
+    <Content Include="Images\Icon\sync.ico" />
+    <Content Include="Images\Icon\sync.png" />
+    <Content Include="Images\Rotate-left.png" />
+    <Content Include="Images\Rotate-right.png" />
+    <Content Include="Images\Save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -51,7 +51,16 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pictureViewer = new System.Windows.Forms.PictureBox();
             this.groupBoxListFiles = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.metroGridListImage = new MetroFramework.Controls.MetroGrid();
+            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupButtonAction = new System.Windows.Forms.GroupBox();
+            this.pic_delete = new System.Windows.Forms.PictureBox();
+            this.pic_save = new System.Windows.Forms.PictureBox();
+            this.rotate_left = new System.Windows.Forms.PictureBox();
+            this.rotate_right = new System.Windows.Forms.PictureBox();
             this.groupHeader = new System.Windows.Forms.GroupBox();
             this.metroTextBoxShowPath = new MetroFramework.Controls.MetroTextBox();
             this.metroButtonBrowser = new MetroFramework.Controls.MetroButton();
@@ -59,15 +68,6 @@
             this.folderDestination = new System.Windows.Forms.FolderBrowserDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
-            this.groupButtonAction = new System.Windows.Forms.GroupBox();
-            this.rotate_left = new System.Windows.Forms.PictureBox();
-            this.rotate_right = new System.Windows.Forms.PictureBox();
-            this.pic_save = new System.Windows.Forms.PictureBox();
-            this.pic_delete = new System.Windows.Forms.PictureBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroTabControl.SuspendLayout();
             this.metroTabPageSync.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,15 +81,15 @@
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureViewer)).BeginInit();
             this.groupBoxListFiles.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).BeginInit();
-            this.groupHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
             this.groupButtonAction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_save)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_save)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
+            this.groupHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl
@@ -99,7 +99,7 @@
             this.metroTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.SelectedIndex = 1;
+            this.metroTabControl.SelectedIndex = 0;
             this.metroTabControl.Size = new System.Drawing.Size(816, 404);
             this.metroTabControl.TabIndex = 1;
             this.metroTabControl.UseSelectable = true;
@@ -312,6 +312,18 @@
             this.groupBoxListFiles.TabStop = false;
             this.groupBoxListFiles.Text = "Files";
             // 
+            // groupBox7
+            // 
+            this.groupBox7.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox7.Controls.Add(this.metroGridListImage);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.ForeColor = System.Drawing.Color.Transparent;
+            this.groupBox7.Location = new System.Drawing.Point(3, 16);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(160, 253);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            // 
             // metroGridListImage
             // 
             this.metroGridListImage.AllowUserToAddRows = false;
@@ -367,6 +379,96 @@
             this.metroGridListImage.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
             this.metroGridListImage.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
             // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imagesBindingSource
+            // 
+            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
+            // 
+            // groupButtonAction
+            // 
+            this.groupButtonAction.BackColor = System.Drawing.Color.Transparent;
+            this.groupButtonAction.Controls.Add(this.pic_delete);
+            this.groupButtonAction.Controls.Add(this.pic_save);
+            this.groupButtonAction.Controls.Add(this.rotate_left);
+            this.groupButtonAction.Controls.Add(this.rotate_right);
+            this.groupButtonAction.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupButtonAction.Enabled = false;
+            this.groupButtonAction.ForeColor = System.Drawing.Color.Transparent;
+            this.groupButtonAction.Location = new System.Drawing.Point(3, 269);
+            this.groupButtonAction.Name = "groupButtonAction";
+            this.groupButtonAction.Size = new System.Drawing.Size(160, 44);
+            this.groupButtonAction.TabIndex = 1;
+            this.groupButtonAction.TabStop = false;
+            // 
+            // pic_delete
+            // 
+            this.pic_delete.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pic_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_delete.Image = ((System.Drawing.Image)(resources.GetObject("pic_delete.Image")));
+            this.pic_delete.InitialImage = null;
+            this.pic_delete.Location = new System.Drawing.Point(96, 9);
+            this.pic_delete.Name = "pic_delete";
+            this.pic_delete.Size = new System.Drawing.Size(25, 30);
+            this.pic_delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_delete.TabIndex = 3;
+            this.pic_delete.TabStop = false;
+            this.pic_delete.Click += new System.EventHandler(this.pic_delete_Click);
+            // 
+            // pic_save
+            // 
+            this.pic_save.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pic_save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_save.Image = ((System.Drawing.Image)(resources.GetObject("pic_save.Image")));
+            this.pic_save.InitialImage = null;
+            this.pic_save.Location = new System.Drawing.Point(65, 9);
+            this.pic_save.Name = "pic_save";
+            this.pic_save.Size = new System.Drawing.Size(25, 30);
+            this.pic_save.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_save.TabIndex = 2;
+            this.pic_save.TabStop = false;
+            // 
+            // rotate_left
+            // 
+            this.rotate_left.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.rotate_left.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rotate_left.Image = ((System.Drawing.Image)(resources.GetObject("rotate_left.Image")));
+            this.rotate_left.InitialImage = null;
+            this.rotate_left.Location = new System.Drawing.Point(3, 9);
+            this.rotate_left.Name = "rotate_left";
+            this.rotate_left.Size = new System.Drawing.Size(25, 30);
+            this.rotate_left.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rotate_left.TabIndex = 0;
+            this.rotate_left.TabStop = false;
+            this.rotate_left.Click += new System.EventHandler(this.rotate_left_Click);
+            // 
+            // rotate_right
+            // 
+            this.rotate_right.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.rotate_right.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rotate_right.Image = ((System.Drawing.Image)(resources.GetObject("rotate_right.Image")));
+            this.rotate_right.InitialImage = null;
+            this.rotate_right.Location = new System.Drawing.Point(34, 9);
+            this.rotate_right.Name = "rotate_right";
+            this.rotate_right.Size = new System.Drawing.Size(25, 30);
+            this.rotate_right.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rotate_right.TabIndex = 1;
+            this.rotate_right.TabStop = false;
+            this.rotate_right.Click += new System.EventHandler(this.rotate_right_Click);
+            // 
             // groupHeader
             // 
             this.groupHeader.Controls.Add(this.metroTextBoxShowPath);
@@ -414,108 +516,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // groupButtonAction
-            // 
-            this.groupButtonAction.BackColor = System.Drawing.Color.Transparent;
-            this.groupButtonAction.Controls.Add(this.pic_delete);
-            this.groupButtonAction.Controls.Add(this.pic_save);
-            this.groupButtonAction.Controls.Add(this.rotate_left);
-            this.groupButtonAction.Controls.Add(this.rotate_right);
-            this.groupButtonAction.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupButtonAction.Enabled = false;
-            this.groupButtonAction.ForeColor = System.Drawing.Color.Transparent;
-            this.groupButtonAction.Location = new System.Drawing.Point(3, 269);
-            this.groupButtonAction.Name = "groupButtonAction";
-            this.groupButtonAction.Size = new System.Drawing.Size(160, 44);
-            this.groupButtonAction.TabIndex = 1;
-            this.groupButtonAction.TabStop = false;
-            // 
-            // rotate_left
-            // 
-            this.rotate_left.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.rotate_left.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rotate_left.Image = ((System.Drawing.Image)(resources.GetObject("rotate_left.Image")));
-            this.rotate_left.InitialImage = null;
-            this.rotate_left.Location = new System.Drawing.Point(3, 9);
-            this.rotate_left.Name = "rotate_left";
-            this.rotate_left.Size = new System.Drawing.Size(25, 30);
-            this.rotate_left.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rotate_left.TabIndex = 0;
-            this.rotate_left.TabStop = false;
-            this.rotate_left.Click += new System.EventHandler(this.rotate_left_Click);
-            // 
-            // rotate_right
-            // 
-            this.rotate_right.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.rotate_right.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rotate_right.Image = ((System.Drawing.Image)(resources.GetObject("rotate_right.Image")));
-            this.rotate_right.InitialImage = null;
-            this.rotate_right.Location = new System.Drawing.Point(34, 9);
-            this.rotate_right.Name = "rotate_right";
-            this.rotate_right.Size = new System.Drawing.Size(25, 30);
-            this.rotate_right.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rotate_right.TabIndex = 1;
-            this.rotate_right.TabStop = false;
-            this.rotate_right.Click += new System.EventHandler(this.rotate_right_Click);
-            // 
-            // pic_save
-            // 
-            this.pic_save.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pic_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_save.Image = ((System.Drawing.Image)(resources.GetObject("pic_save.Image")));
-            this.pic_save.InitialImage = null;
-            this.pic_save.Location = new System.Drawing.Point(65, 9);
-            this.pic_save.Name = "pic_save";
-            this.pic_save.Size = new System.Drawing.Size(25, 30);
-            this.pic_save.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_save.TabIndex = 2;
-            this.pic_save.TabStop = false;
-            // 
-            // pic_delete
-            // 
-            this.pic_delete.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pic_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_delete.Image = ((System.Drawing.Image)(resources.GetObject("pic_delete.Image")));
-            this.pic_delete.InitialImage = null;
-            this.pic_delete.Location = new System.Drawing.Point(96, 9);
-            this.pic_delete.Name = "pic_delete";
-            this.pic_delete.Size = new System.Drawing.Size(25, 30);
-            this.pic_delete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_delete.TabIndex = 3;
-            this.pic_delete.TabStop = false;
-            this.pic_delete.Click += new System.EventHandler(this.pic_delete_Click);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox7.Controls.Add(this.metroGridListImage);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.ForeColor = System.Drawing.Color.Transparent;
-            this.groupBox7.Location = new System.Drawing.Point(3, 16);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(160, 253);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pathDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imagesBindingSource
-            // 
-            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
-            // 
             // syncfilefolder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,7 +525,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "syncfilefolder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sync File-Folder";
+            this.Text = "Sync file in a folder";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.metroTabControl.ResumeLayout(false);
             this.metroTabPageSync.ResumeLayout(false);
@@ -540,15 +540,15 @@
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureViewer)).EndInit();
             this.groupBoxListFiles.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).EndInit();
-            this.groupHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
             this.groupButtonAction.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_save)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_save)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
+            this.groupHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

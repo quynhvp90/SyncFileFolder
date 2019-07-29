@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(syncfilefolder));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPageSync = new MetroFramework.Controls.MetroTabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -49,13 +49,12 @@
             this.metroButtonOrigination = new MetroFramework.Controls.MetroButton();
             this.metroTabPageViewImage = new MetroFramework.Controls.MetroTabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnNext = new System.Windows.Forms.PictureBox();
+            this.btnPre = new System.Windows.Forms.PictureBox();
             this.pictureViewer = new System.Windows.Forms.PictureBox();
             this.groupBoxListFiles = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.metroGridListImage = new MetroFramework.Controls.MetroGrid();
-            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupButtonAction = new System.Windows.Forms.GroupBox();
             this.pic_delete = new System.Windows.Forms.PictureBox();
             this.pic_save = new System.Windows.Forms.PictureBox();
@@ -68,8 +67,26 @@
             this.folderDestination = new System.Windows.Forms.FolderBrowserDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
-            this.btnPre = new System.Windows.Forms.PictureBox();
-            this.btnNext = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labFileName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labDate = new System.Windows.Forms.Label();
+            this.labSize = new System.Windows.Forms.Label();
+            this.labFileSize = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labImageSize = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labShot = new System.Windows.Forms.Label();
+            this.labelISO = new System.Windows.Forms.Label();
+            this.labISO = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labDevice = new System.Windows.Forms.Label();
+            this.metroMenuStrip = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.showInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infoGroup = new System.Windows.Forms.GroupBox();
             this.metroTabControl.SuspendLayout();
             this.metroTabPageSync.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,19 +98,21 @@
             this.groupBox1.SuspendLayout();
             this.metroTabPageViewImage.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureViewer)).BeginInit();
             this.groupBoxListFiles.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
             this.groupButtonAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_save)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).BeginInit();
             this.groupHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
+            this.metroMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
+            this.infoGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl
@@ -104,7 +123,7 @@
             this.metroTabControl.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl.Name = "metroTabControl";
             this.metroTabControl.SelectedIndex = 1;
-            this.metroTabControl.Size = new System.Drawing.Size(816, 404);
+            this.metroTabControl.Size = new System.Drawing.Size(816, 708);
             this.metroTabControl.TabIndex = 1;
             this.metroTabControl.UseSelectable = true;
             // 
@@ -118,7 +137,7 @@
             this.metroTabPageSync.HorizontalScrollbarSize = 10;
             this.metroTabPageSync.Location = new System.Drawing.Point(4, 38);
             this.metroTabPageSync.Name = "metroTabPageSync";
-            this.metroTabPageSync.Size = new System.Drawing.Size(808, 362);
+            this.metroTabPageSync.Size = new System.Drawing.Size(808, 666);
             this.metroTabPageSync.TabIndex = 0;
             this.metroTabPageSync.Text = "SyncFolder";
             this.metroTabPageSync.VerticalScrollbarBarColor = true;
@@ -275,7 +294,7 @@
             this.metroTabPageViewImage.HorizontalScrollbarSize = 10;
             this.metroTabPageViewImage.Location = new System.Drawing.Point(4, 38);
             this.metroTabPageViewImage.Name = "metroTabPageViewImage";
-            this.metroTabPageViewImage.Size = new System.Drawing.Size(808, 362);
+            this.metroTabPageViewImage.Size = new System.Drawing.Size(808, 666);
             this.metroTabPageViewImage.TabIndex = 1;
             this.metroTabPageViewImage.Text = "View Images";
             this.metroTabPageViewImage.VerticalScrollbarBarColor = true;
@@ -284,27 +303,58 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.infoGroup);
             this.groupBox8.Controls.Add(this.btnNext);
             this.groupBox8.Controls.Add(this.btnPre);
             this.groupBox8.Controls.Add(this.pictureViewer);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 46);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(642, 316);
+            this.groupBox8.Size = new System.Drawing.Size(642, 620);
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Viewer";
             // 
+            // btnNext
+            // 
+            this.btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnNext.Location = new System.Drawing.Point(624, 16);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(15, 601);
+            this.btnNext.TabIndex = 1;
+            this.btnNext.TabStop = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPre
+            // 
+            this.btnPre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPre.BackgroundImage")));
+            this.btnPre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPre.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPre.Location = new System.Drawing.Point(3, 16);
+            this.btnPre.Name = "btnPre";
+            this.btnPre.Size = new System.Drawing.Size(16, 601);
+            this.btnPre.TabIndex = 1;
+            this.btnPre.TabStop = false;
+            this.btnPre.Click += new System.EventHandler(this.btnPre_Click);
+            // 
             // pictureViewer
             // 
             this.pictureViewer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureViewer.ContextMenuStrip = this.metroMenuStrip;
             this.pictureViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureViewer.Location = new System.Drawing.Point(3, 16);
             this.pictureViewer.Name = "pictureViewer";
-            this.pictureViewer.Size = new System.Drawing.Size(636, 297);
-            this.pictureViewer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureViewer.Size = new System.Drawing.Size(636, 601);
+            this.pictureViewer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureViewer.TabIndex = 0;
             this.pictureViewer.TabStop = false;
+            this.pictureViewer.ClientSizeChanged += new System.EventHandler(this.pictureViewer_ClientSizeChanged);
+            this.pictureViewer.Click += new System.EventHandler(this.pictureViewer_Click);
+            this.pictureViewer.DoubleClick += new System.EventHandler(this.pictureViewer_DoubleClick);
             // 
             // groupBoxListFiles
             // 
@@ -313,7 +363,7 @@
             this.groupBoxListFiles.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBoxListFiles.Location = new System.Drawing.Point(642, 46);
             this.groupBoxListFiles.Name = "groupBoxListFiles";
-            this.groupBoxListFiles.Size = new System.Drawing.Size(166, 316);
+            this.groupBoxListFiles.Size = new System.Drawing.Size(166, 620);
             this.groupBoxListFiles.TabIndex = 3;
             this.groupBoxListFiles.TabStop = false;
             this.groupBoxListFiles.Text = "Files";
@@ -326,13 +376,15 @@
             this.groupBox7.ForeColor = System.Drawing.Color.Transparent;
             this.groupBox7.Location = new System.Drawing.Point(3, 16);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(160, 253);
+            this.groupBox7.Size = new System.Drawing.Size(160, 557);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
             // 
             // metroGridListImage
             // 
             this.metroGridListImage.AllowUserToAddRows = false;
+            this.metroGridListImage.AllowUserToDeleteRows = false;
+            this.metroGridListImage.AllowUserToResizeColumns = false;
             this.metroGridListImage.AllowUserToResizeRows = false;
             this.metroGridListImage.AutoGenerateColumns = false;
             this.metroGridListImage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -340,27 +392,27 @@
             this.metroGridListImage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGridListImage.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGridListImage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridListImage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridListImage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.metroGridListImage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.metroGridListImage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pathDataGridViewTextBoxColumn,
             this.fileNameDataGridViewTextBoxColumn});
             this.metroGridListImage.DataSource = this.imagesBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGridListImage.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGridListImage.DefaultCellStyle = dataGridViewCellStyle8;
             this.metroGridListImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroGridListImage.EnableHeadersVisualStyles = false;
             this.metroGridListImage.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -369,40 +421,22 @@
             this.metroGridListImage.Name = "metroGridListImage";
             this.metroGridListImage.ReadOnly = true;
             this.metroGridListImage.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridListImage.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridListImage.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.metroGridListImage.RowHeadersVisible = false;
             this.metroGridListImage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridListImage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGridListImage.Size = new System.Drawing.Size(154, 234);
+            this.metroGridListImage.Size = new System.Drawing.Size(154, 538);
             this.metroGridListImage.TabIndex = 0;
             this.metroGridListImage.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
             this.metroGridListImage.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
-            // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pathDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imagesBindingSource
-            // 
-            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
+            this.metroGridListImage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroGridListImage_KeyDown);
             // 
             // groupButtonAction
             // 
@@ -414,7 +448,7 @@
             this.groupButtonAction.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupButtonAction.Enabled = false;
             this.groupButtonAction.ForeColor = System.Drawing.Color.Transparent;
-            this.groupButtonAction.Location = new System.Drawing.Point(3, 269);
+            this.groupButtonAction.Location = new System.Drawing.Point(3, 573);
             this.groupButtonAction.Name = "groupButtonAction";
             this.groupButtonAction.Size = new System.Drawing.Size(160, 44);
             this.groupButtonAction.TabIndex = 1;
@@ -491,7 +525,7 @@
             // 
             this.metroTextBoxShowPath.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTextBoxShowPath.Lines = new string[0];
-            this.metroTextBoxShowPath.Location = new System.Drawing.Point(69, 16);
+            this.metroTextBoxShowPath.Location = new System.Drawing.Point(103, 16);
             this.metroTextBoxShowPath.Margin = new System.Windows.Forms.Padding(10, 5, 3, 3);
             this.metroTextBoxShowPath.MaxLength = 32767;
             this.metroTextBoxShowPath.Name = "metroTextBoxShowPath";
@@ -500,7 +534,7 @@
             this.metroTextBoxShowPath.ReadOnly = true;
             this.metroTextBoxShowPath.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxShowPath.SelectedText = "";
-            this.metroTextBoxShowPath.Size = new System.Drawing.Size(736, 27);
+            this.metroTextBoxShowPath.Size = new System.Drawing.Size(702, 27);
             this.metroTextBoxShowPath.TabIndex = 1;
             this.metroTextBoxShowPath.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxShowPath.UseSelectable = true;
@@ -510,7 +544,7 @@
             this.metroButtonBrowser.Dock = System.Windows.Forms.DockStyle.Left;
             this.metroButtonBrowser.Location = new System.Drawing.Point(3, 16);
             this.metroButtonBrowser.Name = "metroButtonBrowser";
-            this.metroButtonBrowser.Size = new System.Drawing.Size(66, 27);
+            this.metroButtonBrowser.Size = new System.Drawing.Size(100, 27);
             this.metroButtonBrowser.TabIndex = 0;
             this.metroButtonBrowser.Text = "Browser";
             this.metroButtonBrowser.UseSelectable = true;
@@ -522,37 +556,223 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // btnPre
+            // label1
             // 
-            this.btnPre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPre.BackgroundImage")));
-            this.btnPre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPre.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPre.Location = new System.Drawing.Point(3, 16);
-            this.btnPre.Name = "btnPre";
-            this.btnPre.Size = new System.Drawing.Size(16, 297);
-            this.btnPre.TabIndex = 1;
-            this.btnPre.TabStop = false;
-            this.btnPre.Click += new System.EventHandler(this.btnPre_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 22);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "File name";
             // 
-            // btnNext
+            // labFileName
             // 
-            this.btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
-            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnNext.Location = new System.Drawing.Point(624, 16);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(15, 297);
-            this.btnNext.TabIndex = 1;
-            this.btnNext.TabStop = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.labFileName.AutoSize = true;
+            this.labFileName.BackColor = System.Drawing.Color.Transparent;
+            this.labFileName.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labFileName.Location = new System.Drawing.Point(13, 61);
+            this.labFileName.Name = "labFileName";
+            this.labFileName.Size = new System.Drawing.Size(82, 22);
+            this.labFileName.TabIndex = 3;
+            this.labFileName.Text = "File name: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Date taken";
+            // 
+            // labDate
+            // 
+            this.labDate.AutoSize = true;
+            this.labDate.BackColor = System.Drawing.Color.Transparent;
+            this.labDate.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labDate.Location = new System.Drawing.Point(13, 135);
+            this.labDate.Name = "labDate";
+            this.labDate.Size = new System.Drawing.Size(40, 22);
+            this.labDate.TabIndex = 3;
+            this.labDate.Text = "Date";
+            // 
+            // labSize
+            // 
+            this.labSize.AutoSize = true;
+            this.labSize.BackColor = System.Drawing.Color.Transparent;
+            this.labSize.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labSize.Location = new System.Drawing.Point(6, 179);
+            this.labSize.Name = "labSize";
+            this.labSize.Size = new System.Drawing.Size(49, 22);
+            this.labSize.TabIndex = 3;
+            this.labSize.Text = "Size";
+            // 
+            // labFileSize
+            // 
+            this.labFileSize.AutoSize = true;
+            this.labFileSize.BackColor = System.Drawing.Color.Transparent;
+            this.labFileSize.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labFileSize.Location = new System.Drawing.Point(13, 203);
+            this.labFileSize.Name = "labFileSize";
+            this.labFileSize.Size = new System.Drawing.Size(56, 22);
+            this.labFileSize.TabIndex = 3;
+            this.labFileSize.Text = "file size";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 240);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 22);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Dimensions";
+            // 
+            // labImageSize
+            // 
+            this.labImageSize.AutoSize = true;
+            this.labImageSize.BackColor = System.Drawing.Color.Transparent;
+            this.labImageSize.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labImageSize.Location = new System.Drawing.Point(13, 264);
+            this.labImageSize.Name = "labImageSize";
+            this.labImageSize.Size = new System.Drawing.Size(79, 22);
+            this.labImageSize.TabIndex = 3;
+            this.labImageSize.Text = "size image";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 301);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 22);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Shot";
+            // 
+            // labShot
+            // 
+            this.labShot.AutoSize = true;
+            this.labShot.BackColor = System.Drawing.Color.Transparent;
+            this.labShot.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labShot.Location = new System.Drawing.Point(13, 325);
+            this.labShot.Name = "labShot";
+            this.labShot.Size = new System.Drawing.Size(42, 22);
+            this.labShot.TabIndex = 3;
+            this.labShot.Text = "stock";
+            // 
+            // labelISO
+            // 
+            this.labelISO.AutoSize = true;
+            this.labelISO.BackColor = System.Drawing.Color.Transparent;
+            this.labelISO.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelISO.Location = new System.Drawing.Point(6, 360);
+            this.labelISO.Name = "labelISO";
+            this.labelISO.Size = new System.Drawing.Size(43, 22);
+            this.labelISO.TabIndex = 3;
+            this.labelISO.Text = "ISO";
+            // 
+            // labISO
+            // 
+            this.labISO.AutoSize = true;
+            this.labISO.BackColor = System.Drawing.Color.Transparent;
+            this.labISO.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labISO.Location = new System.Drawing.Point(13, 384);
+            this.labISO.Name = "labISO";
+            this.labISO.Size = new System.Drawing.Size(28, 22);
+            this.labISO.TabIndex = 3;
+            this.labISO.Text = "iso";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 421);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 22);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Device";
+            // 
+            // labDevice
+            // 
+            this.labDevice.AutoSize = true;
+            this.labDevice.BackColor = System.Drawing.Color.Transparent;
+            this.labDevice.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labDevice.Location = new System.Drawing.Point(13, 445);
+            this.labDevice.Name = "labDevice";
+            this.labDevice.Size = new System.Drawing.Size(51, 22);
+            this.labDevice.TabIndex = 3;
+            this.labDevice.Text = "device";
+            // 
+            // metroMenuStrip
+            // 
+            this.metroMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showInfoToolStripMenuItem});
+            this.metroMenuStrip.Name = "metroMenuStrip";
+            this.metroMenuStrip.Size = new System.Drawing.Size(128, 26);
+            // 
+            // showInfoToolStripMenuItem
+            // 
+            this.showInfoToolStripMenuItem.Name = "showInfoToolStripMenuItem";
+            this.showInfoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.showInfoToolStripMenuItem.Text = "Show Info";
+            this.showInfoToolStripMenuItem.Click += new System.EventHandler(this.showInfoToolStripMenuItem_Click);
+            // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imagesBindingSource
+            // 
+            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
+            // 
+            // infoGroup
+            // 
+            this.infoGroup.BackColor = System.Drawing.Color.Transparent;
+            this.infoGroup.Controls.Add(this.label1);
+            this.infoGroup.Controls.Add(this.labDate);
+            this.infoGroup.Controls.Add(this.labSize);
+            this.infoGroup.Controls.Add(this.labDevice);
+            this.infoGroup.Controls.Add(this.label3);
+            this.infoGroup.Controls.Add(this.labISO);
+            this.infoGroup.Controls.Add(this.label2);
+            this.infoGroup.Controls.Add(this.labShot);
+            this.infoGroup.Controls.Add(this.label6);
+            this.infoGroup.Controls.Add(this.labImageSize);
+            this.infoGroup.Controls.Add(this.labFileName);
+            this.infoGroup.Controls.Add(this.labFileSize);
+            this.infoGroup.Controls.Add(this.labelISO);
+            this.infoGroup.Controls.Add(this.label4);
+            this.infoGroup.Dock = System.Windows.Forms.DockStyle.Left;
+            this.infoGroup.Location = new System.Drawing.Point(19, 16);
+            this.infoGroup.Name = "infoGroup";
+            this.infoGroup.Size = new System.Drawing.Size(345, 601);
+            this.infoGroup.TabIndex = 4;
+            this.infoGroup.TabStop = false;
+            this.infoGroup.Visible = false;
             // 
             // syncfilefolder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 404);
+            this.ClientSize = new System.Drawing.Size(816, 708);
             this.Controls.Add(this.metroTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "syncfilefolder";
@@ -570,19 +790,22 @@
             this.groupBox1.ResumeLayout(false);
             this.metroTabPageViewImage.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureViewer)).EndInit();
             this.groupBoxListFiles.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
             this.groupButtonAction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_save)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).EndInit();
             this.groupHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnPre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
+            this.metroMenuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
+            this.infoGroup.ResumeLayout(false);
+            this.infoGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -626,6 +849,23 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.PictureBox btnNext;
         private System.Windows.Forms.PictureBox btnPre;
+        private System.Windows.Forms.Label labDate;
+        private System.Windows.Forms.Label labFileSize;
+        private System.Windows.Forms.Label labFileName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labSize;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labShot;
+        private System.Windows.Forms.Label labImageSize;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labDevice;
+        private System.Windows.Forms.Label labISO;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelISO;
+        private MetroFramework.Controls.MetroContextMenu metroMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem showInfoToolStripMenuItem;
+        private System.Windows.Forms.GroupBox infoGroup;
     }
 }
 

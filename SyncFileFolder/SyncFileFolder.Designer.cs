@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(syncfilefolder));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPageSync = new MetroFramework.Controls.MetroTabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -49,12 +49,32 @@
             this.metroButtonOrigination = new MetroFramework.Controls.MetroButton();
             this.metroTabPageViewImage = new MetroFramework.Controls.MetroTabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.infoGroup = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labDate = new System.Windows.Forms.Label();
+            this.labSize = new System.Windows.Forms.Label();
+            this.labDevice = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labISO = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labShot = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labImageSize = new System.Windows.Forms.Label();
+            this.labFileName = new System.Windows.Forms.Label();
+            this.labFileSize = new System.Windows.Forms.Label();
+            this.labelISO = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.PictureBox();
             this.btnPre = new System.Windows.Forms.PictureBox();
             this.pictureViewer = new System.Windows.Forms.PictureBox();
+            this.metroMenuStrip = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.showInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxListFiles = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.metroGridListImage = new MetroFramework.Controls.MetroGrid();
+            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupButtonAction = new System.Windows.Forms.GroupBox();
             this.pic_delete = new System.Windows.Forms.PictureBox();
             this.pic_save = new System.Windows.Forms.PictureBox();
@@ -67,26 +87,6 @@
             this.folderDestination = new System.Windows.Forms.FolderBrowserDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labFileName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labDate = new System.Windows.Forms.Label();
-            this.labSize = new System.Windows.Forms.Label();
-            this.labFileSize = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labImageSize = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labShot = new System.Windows.Forms.Label();
-            this.labelISO = new System.Windows.Forms.Label();
-            this.labISO = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labDevice = new System.Windows.Forms.Label();
-            this.metroMenuStrip = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.showInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.infoGroup = new System.Windows.Forms.GroupBox();
             this.metroTabControl.SuspendLayout();
             this.metroTabPageSync.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -98,21 +98,21 @@
             this.groupBox1.SuspendLayout();
             this.metroTabPageViewImage.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.infoGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureViewer)).BeginInit();
+            this.metroMenuStrip.SuspendLayout();
             this.groupBoxListFiles.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
             this.groupButtonAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_save)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).BeginInit();
             this.groupHeader.SuspendLayout();
-            this.metroMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
-            this.infoGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl
@@ -315,6 +315,185 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Viewer";
             // 
+            // infoGroup
+            // 
+            this.infoGroup.BackColor = System.Drawing.Color.Transparent;
+            this.infoGroup.Controls.Add(this.label1);
+            this.infoGroup.Controls.Add(this.labDate);
+            this.infoGroup.Controls.Add(this.labSize);
+            this.infoGroup.Controls.Add(this.labDevice);
+            this.infoGroup.Controls.Add(this.label3);
+            this.infoGroup.Controls.Add(this.labISO);
+            this.infoGroup.Controls.Add(this.label2);
+            this.infoGroup.Controls.Add(this.labShot);
+            this.infoGroup.Controls.Add(this.label6);
+            this.infoGroup.Controls.Add(this.labImageSize);
+            this.infoGroup.Controls.Add(this.labFileName);
+            this.infoGroup.Controls.Add(this.labFileSize);
+            this.infoGroup.Controls.Add(this.labelISO);
+            this.infoGroup.Controls.Add(this.label4);
+            this.infoGroup.Dock = System.Windows.Forms.DockStyle.Left;
+            this.infoGroup.Location = new System.Drawing.Point(19, 16);
+            this.infoGroup.Name = "infoGroup";
+            this.infoGroup.Size = new System.Drawing.Size(345, 601);
+            this.infoGroup.TabIndex = 4;
+            this.infoGroup.TabStop = false;
+            this.infoGroup.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 22);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "File name";
+            // 
+            // labDate
+            // 
+            this.labDate.AutoSize = true;
+            this.labDate.BackColor = System.Drawing.Color.Transparent;
+            this.labDate.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labDate.Location = new System.Drawing.Point(13, 135);
+            this.labDate.Name = "labDate";
+            this.labDate.Size = new System.Drawing.Size(40, 22);
+            this.labDate.TabIndex = 3;
+            this.labDate.Text = "Date";
+            // 
+            // labSize
+            // 
+            this.labSize.AutoSize = true;
+            this.labSize.BackColor = System.Drawing.Color.Transparent;
+            this.labSize.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labSize.Location = new System.Drawing.Point(6, 179);
+            this.labSize.Name = "labSize";
+            this.labSize.Size = new System.Drawing.Size(49, 22);
+            this.labSize.TabIndex = 3;
+            this.labSize.Text = "Size";
+            // 
+            // labDevice
+            // 
+            this.labDevice.AutoSize = true;
+            this.labDevice.BackColor = System.Drawing.Color.Transparent;
+            this.labDevice.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labDevice.Location = new System.Drawing.Point(13, 445);
+            this.labDevice.Name = "labDevice";
+            this.labDevice.Size = new System.Drawing.Size(51, 22);
+            this.labDevice.TabIndex = 3;
+            this.labDevice.Text = "device";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 240);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 22);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Dimensions";
+            // 
+            // labISO
+            // 
+            this.labISO.AutoSize = true;
+            this.labISO.BackColor = System.Drawing.Color.Transparent;
+            this.labISO.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labISO.Location = new System.Drawing.Point(13, 384);
+            this.labISO.Name = "labISO";
+            this.labISO.Size = new System.Drawing.Size(28, 22);
+            this.labISO.TabIndex = 3;
+            this.labISO.Text = "iso";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Date taken";
+            // 
+            // labShot
+            // 
+            this.labShot.AutoSize = true;
+            this.labShot.BackColor = System.Drawing.Color.Transparent;
+            this.labShot.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labShot.Location = new System.Drawing.Point(13, 325);
+            this.labShot.Name = "labShot";
+            this.labShot.Size = new System.Drawing.Size(42, 22);
+            this.labShot.TabIndex = 3;
+            this.labShot.Text = "stock";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 301);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 22);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Shot";
+            // 
+            // labImageSize
+            // 
+            this.labImageSize.AutoSize = true;
+            this.labImageSize.BackColor = System.Drawing.Color.Transparent;
+            this.labImageSize.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labImageSize.Location = new System.Drawing.Point(13, 264);
+            this.labImageSize.Name = "labImageSize";
+            this.labImageSize.Size = new System.Drawing.Size(79, 22);
+            this.labImageSize.TabIndex = 3;
+            this.labImageSize.Text = "size image";
+            // 
+            // labFileName
+            // 
+            this.labFileName.AutoSize = true;
+            this.labFileName.BackColor = System.Drawing.Color.Transparent;
+            this.labFileName.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labFileName.Location = new System.Drawing.Point(13, 61);
+            this.labFileName.Name = "labFileName";
+            this.labFileName.Size = new System.Drawing.Size(82, 22);
+            this.labFileName.TabIndex = 3;
+            this.labFileName.Text = "File name: ";
+            // 
+            // labFileSize
+            // 
+            this.labFileSize.AutoSize = true;
+            this.labFileSize.BackColor = System.Drawing.Color.Transparent;
+            this.labFileSize.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labFileSize.Location = new System.Drawing.Point(13, 203);
+            this.labFileSize.Name = "labFileSize";
+            this.labFileSize.Size = new System.Drawing.Size(56, 22);
+            this.labFileSize.TabIndex = 3;
+            this.labFileSize.Text = "file size";
+            // 
+            // labelISO
+            // 
+            this.labelISO.AutoSize = true;
+            this.labelISO.BackColor = System.Drawing.Color.Transparent;
+            this.labelISO.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelISO.Location = new System.Drawing.Point(6, 360);
+            this.labelISO.Name = "labelISO";
+            this.labelISO.Size = new System.Drawing.Size(43, 22);
+            this.labelISO.TabIndex = 3;
+            this.labelISO.Text = "ISO";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 421);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 22);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Device";
+            // 
             // btnNext
             // 
             this.btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
@@ -356,6 +535,20 @@
             this.pictureViewer.Click += new System.EventHandler(this.pictureViewer_Click);
             this.pictureViewer.DoubleClick += new System.EventHandler(this.pictureViewer_DoubleClick);
             // 
+            // metroMenuStrip
+            // 
+            this.metroMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showInfoToolStripMenuItem});
+            this.metroMenuStrip.Name = "metroMenuStrip";
+            this.metroMenuStrip.Size = new System.Drawing.Size(128, 26);
+            // 
+            // showInfoToolStripMenuItem
+            // 
+            this.showInfoToolStripMenuItem.Name = "showInfoToolStripMenuItem";
+            this.showInfoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.showInfoToolStripMenuItem.Text = "Show Info";
+            this.showInfoToolStripMenuItem.Click += new System.EventHandler(this.showInfoToolStripMenuItem_Click);
+            // 
             // groupBoxListFiles
             // 
             this.groupBoxListFiles.Controls.Add(this.groupBox7);
@@ -392,27 +585,27 @@
             this.metroGridListImage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGridListImage.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGridListImage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridListImage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridListImage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.metroGridListImage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.metroGridListImage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pathDataGridViewTextBoxColumn,
             this.fileNameDataGridViewTextBoxColumn});
             this.metroGridListImage.DataSource = this.imagesBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGridListImage.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGridListImage.DefaultCellStyle = dataGridViewCellStyle5;
             this.metroGridListImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroGridListImage.EnableHeadersVisualStyles = false;
             this.metroGridListImage.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -421,14 +614,14 @@
             this.metroGridListImage.Name = "metroGridListImage";
             this.metroGridListImage.ReadOnly = true;
             this.metroGridListImage.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridListImage.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridListImage.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGridListImage.RowHeadersVisible = false;
             this.metroGridListImage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridListImage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -437,6 +630,25 @@
             this.metroGridListImage.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
             this.metroGridListImage.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
             this.metroGridListImage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroGridListImage_KeyDown);
+            // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imagesBindingSource
+            // 
+            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
             // 
             // groupButtonAction
             // 
@@ -556,218 +768,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 22);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "File name";
-            // 
-            // labFileName
-            // 
-            this.labFileName.AutoSize = true;
-            this.labFileName.BackColor = System.Drawing.Color.Transparent;
-            this.labFileName.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labFileName.Location = new System.Drawing.Point(13, 61);
-            this.labFileName.Name = "labFileName";
-            this.labFileName.Size = new System.Drawing.Size(82, 22);
-            this.labFileName.TabIndex = 3;
-            this.labFileName.Text = "File name: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Date taken";
-            // 
-            // labDate
-            // 
-            this.labDate.AutoSize = true;
-            this.labDate.BackColor = System.Drawing.Color.Transparent;
-            this.labDate.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labDate.Location = new System.Drawing.Point(13, 135);
-            this.labDate.Name = "labDate";
-            this.labDate.Size = new System.Drawing.Size(40, 22);
-            this.labDate.TabIndex = 3;
-            this.labDate.Text = "Date";
-            // 
-            // labSize
-            // 
-            this.labSize.AutoSize = true;
-            this.labSize.BackColor = System.Drawing.Color.Transparent;
-            this.labSize.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labSize.Location = new System.Drawing.Point(6, 179);
-            this.labSize.Name = "labSize";
-            this.labSize.Size = new System.Drawing.Size(49, 22);
-            this.labSize.TabIndex = 3;
-            this.labSize.Text = "Size";
-            // 
-            // labFileSize
-            // 
-            this.labFileSize.AutoSize = true;
-            this.labFileSize.BackColor = System.Drawing.Color.Transparent;
-            this.labFileSize.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labFileSize.Location = new System.Drawing.Point(13, 203);
-            this.labFileSize.Name = "labFileSize";
-            this.labFileSize.Size = new System.Drawing.Size(56, 22);
-            this.labFileSize.TabIndex = 3;
-            this.labFileSize.Text = "file size";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 240);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 22);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Dimensions";
-            // 
-            // labImageSize
-            // 
-            this.labImageSize.AutoSize = true;
-            this.labImageSize.BackColor = System.Drawing.Color.Transparent;
-            this.labImageSize.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labImageSize.Location = new System.Drawing.Point(13, 264);
-            this.labImageSize.Name = "labImageSize";
-            this.labImageSize.Size = new System.Drawing.Size(79, 22);
-            this.labImageSize.TabIndex = 3;
-            this.labImageSize.Text = "size image";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 301);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 22);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Shot";
-            // 
-            // labShot
-            // 
-            this.labShot.AutoSize = true;
-            this.labShot.BackColor = System.Drawing.Color.Transparent;
-            this.labShot.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labShot.Location = new System.Drawing.Point(13, 325);
-            this.labShot.Name = "labShot";
-            this.labShot.Size = new System.Drawing.Size(42, 22);
-            this.labShot.TabIndex = 3;
-            this.labShot.Text = "stock";
-            // 
-            // labelISO
-            // 
-            this.labelISO.AutoSize = true;
-            this.labelISO.BackColor = System.Drawing.Color.Transparent;
-            this.labelISO.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelISO.Location = new System.Drawing.Point(6, 360);
-            this.labelISO.Name = "labelISO";
-            this.labelISO.Size = new System.Drawing.Size(43, 22);
-            this.labelISO.TabIndex = 3;
-            this.labelISO.Text = "ISO";
-            // 
-            // labISO
-            // 
-            this.labISO.AutoSize = true;
-            this.labISO.BackColor = System.Drawing.Color.Transparent;
-            this.labISO.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labISO.Location = new System.Drawing.Point(13, 384);
-            this.labISO.Name = "labISO";
-            this.labISO.Size = new System.Drawing.Size(28, 22);
-            this.labISO.TabIndex = 3;
-            this.labISO.Text = "iso";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 421);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 22);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Device";
-            // 
-            // labDevice
-            // 
-            this.labDevice.AutoSize = true;
-            this.labDevice.BackColor = System.Drawing.Color.Transparent;
-            this.labDevice.Font = new System.Drawing.Font("Arial Narrow", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labDevice.Location = new System.Drawing.Point(13, 445);
-            this.labDevice.Name = "labDevice";
-            this.labDevice.Size = new System.Drawing.Size(51, 22);
-            this.labDevice.TabIndex = 3;
-            this.labDevice.Text = "device";
-            // 
-            // metroMenuStrip
-            // 
-            this.metroMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showInfoToolStripMenuItem});
-            this.metroMenuStrip.Name = "metroMenuStrip";
-            this.metroMenuStrip.Size = new System.Drawing.Size(128, 26);
-            // 
-            // showInfoToolStripMenuItem
-            // 
-            this.showInfoToolStripMenuItem.Name = "showInfoToolStripMenuItem";
-            this.showInfoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.showInfoToolStripMenuItem.Text = "Show Info";
-            this.showInfoToolStripMenuItem.Click += new System.EventHandler(this.showInfoToolStripMenuItem_Click);
-            // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pathDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imagesBindingSource
-            // 
-            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
-            // 
-            // infoGroup
-            // 
-            this.infoGroup.BackColor = System.Drawing.Color.Transparent;
-            this.infoGroup.Controls.Add(this.label1);
-            this.infoGroup.Controls.Add(this.labDate);
-            this.infoGroup.Controls.Add(this.labSize);
-            this.infoGroup.Controls.Add(this.labDevice);
-            this.infoGroup.Controls.Add(this.label3);
-            this.infoGroup.Controls.Add(this.labISO);
-            this.infoGroup.Controls.Add(this.label2);
-            this.infoGroup.Controls.Add(this.labShot);
-            this.infoGroup.Controls.Add(this.label6);
-            this.infoGroup.Controls.Add(this.labImageSize);
-            this.infoGroup.Controls.Add(this.labFileName);
-            this.infoGroup.Controls.Add(this.labFileSize);
-            this.infoGroup.Controls.Add(this.labelISO);
-            this.infoGroup.Controls.Add(this.label4);
-            this.infoGroup.Dock = System.Windows.Forms.DockStyle.Left;
-            this.infoGroup.Location = new System.Drawing.Point(19, 16);
-            this.infoGroup.Name = "infoGroup";
-            this.infoGroup.Size = new System.Drawing.Size(345, 601);
-            this.infoGroup.TabIndex = 4;
-            this.infoGroup.TabStop = false;
-            this.infoGroup.Visible = false;
-            // 
             // syncfilefolder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -777,7 +777,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "syncfilefolder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sync file in a folder";
+            this.Text = "Sync file in a folder  [_NGUYENQUYNH_ Email: quynhvpit@outlook.com_]";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.metroTabControl.ResumeLayout(false);
             this.metroTabPageSync.ResumeLayout(false);
@@ -790,22 +790,22 @@
             this.groupBox1.ResumeLayout(false);
             this.metroTabPageViewImage.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            this.infoGroup.ResumeLayout(false);
+            this.infoGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureViewer)).EndInit();
+            this.metroMenuStrip.ResumeLayout(false);
             this.groupBoxListFiles.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
             this.groupButtonAction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_save)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).EndInit();
             this.groupHeader.ResumeLayout(false);
-            this.metroMenuStrip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
-            this.infoGroup.ResumeLayout(false);
-            this.infoGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }

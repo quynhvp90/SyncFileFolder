@@ -95,16 +95,26 @@ namespace ViewerImage
 
         private void pictureLeft_Click(object sender, EventArgs e)
         {
-            bindingImages.MovePrevious();
-            bindingImages.ResetCurrentItem();
-            SetImage();
+            var lstImages = (List<Images>)bindingImages.DataSource;
+            if (lstImages != null && lstImages.IndexOf((Images)bindingImages.Current) == 0)
+            {
+                bindingImages.MovePrevious();
+                bindingImages.ResetCurrentItem();
+                SetImage();
+            }
+            
         }
 
         private void pictureRight_Click(object sender, EventArgs e)
         {
-            bindingImages.MoveNext();
-            bindingImages.ResetCurrentItem();
-            SetImage();
+            var lstImages = (List<Images>)bindingImages.DataSource;
+            if (lstImages != null && lstImages.IndexOf((Images)bindingImages.Current) == lstImages.Count - 1)
+            {
+                bindingImages.MoveNext();
+                bindingImages.ResetCurrentItem();
+                SetImage();
+            }
+            
         }
         #region RotateImage
 

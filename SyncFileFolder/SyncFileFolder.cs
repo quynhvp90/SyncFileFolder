@@ -163,7 +163,7 @@ namespace SyncFileFolder
                         currentPath = metroGridListImage.CurrentRow.Cells[0].Value.ToString();
                         SetImage();
                         File.Delete(oldPath);
-                        MessageBox.Show("Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //MessageBox.Show("Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
 
@@ -189,9 +189,13 @@ namespace SyncFileFolder
                 isKeyLoad = false;
                 return;
             }
-            imagesBindingSource.MovePrevious();
-            imagesBindingSource.ResetCurrentItem();
-            SetImage();
+            var lstImages = (List<Images>)imagesBindingSource.DataSource;
+            if (lstImages != null && lstImages.IndexOf((Images)imagesBindingSource.Current) == 0)
+            {
+                imagesBindingSource.MovePrevious();
+                imagesBindingSource.ResetCurrentItem();
+                SetImage();
+            }      
             isKeyLoad = false;
         }
 
@@ -205,9 +209,13 @@ namespace SyncFileFolder
                 isKeyLoad = false;
                 return;
             }
-            imagesBindingSource.MoveNext();
-            imagesBindingSource.ResetCurrentItem();
-            SetImage();
+            var lstImages = (List<Images>)imagesBindingSource.DataSource;
+            if (lstImages != null && lstImages.IndexOf((Images)imagesBindingSource.Current) == lstImages.Count - 1)
+            {
+                imagesBindingSource.MoveNext();
+                imagesBindingSource.ResetCurrentItem();
+                SetImage();
+            }               
             isKeyLoad = false;
         }
         #endregion
@@ -317,7 +325,7 @@ namespace SyncFileFolder
                 {
                     isKeyLoad = true;
                     MyTimer = new System.Windows.Forms.Timer();
-                    MyTimer.Interval = 100; // 1 s
+                    MyTimer.Interval = 1; // 1 s
                     MyTimer.Tick += new EventHandler(btnNext_Click);
                     MyTimer.Start();
                 }
@@ -325,7 +333,7 @@ namespace SyncFileFolder
                 {
                     isKeyLoad = true;
                     MyTimer = new System.Windows.Forms.Timer();
-                    MyTimer.Interval = 100; // 0.5s
+                    MyTimer.Interval = 1; // 0.5s
                     MyTimer.Tick += new EventHandler(btnPre_Click);
                     MyTimer.Start();
                 }

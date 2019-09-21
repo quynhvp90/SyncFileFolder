@@ -31,6 +31,7 @@ namespace SyncFileFolder
         {
             InitializeComponent();
             isInit = true;
+            this.Text += " _ v" + Application.ProductVersion;
             //INITMoveImage();
             this.pictureViewer.MouseWheel += PictureViewer_MouseWheel;
             this.metroTabControl.SelectTab(0);
@@ -71,8 +72,8 @@ namespace SyncFileFolder
                 if (System.IO.Directory.Exists(metroTextBoxDestination.Text) && System.IO.Directory.Exists(metroTextBoxOrigination.Text))
                 {
                     // get file on Originatio 
-                    var filesOriginations = System.IO.Directory.GetFiles(metroTextBoxOrigination.Text, "*.*");
-                    var filesDestinations = System.IO.Directory.GetFiles(metroTextBoxDestination.Text, "*.*");
+                    var filesOriginations = System.IO.Directory.GetFiles(metroTextBoxOrigination.Text, "*.*", SearchOption.TopDirectoryOnly);
+                    var filesDestinations = System.IO.Directory.GetFiles(metroTextBoxDestination.Text, "*.*",SearchOption.TopDirectoryOnly);
                     var fileOriginPath = filesOriginations.Select(c => Path.GetFileNameWithoutExtension(c));
                     var fileDesPath = filesDestinations.Select(c => Path.GetFileNameWithoutExtension(c));
                     var fileDelete = fileDesPath.Where(c => !fileOriginPath.Contains(c));

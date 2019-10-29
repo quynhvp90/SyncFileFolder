@@ -109,6 +109,7 @@
   <ItemGroup>
     <Compile Include="Adapter\Core.cs" />
     <Compile Include="Model\Images.cs" />
+    <Compile Include="Model\Option.cs" />
     <Compile Include="SyncFileFolder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +133,7 @@
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\SyncFileFolder.Model.Images.datasource" />
+    <None Include="Properties\DataSources\SyncFileFolder.Model.Option.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

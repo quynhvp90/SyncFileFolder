@@ -18,7 +18,7 @@ namespace SyncFileFolder
     public partial class syncfilefolder : Form
     {
 
-        List<Images> lstImageSource = new List<Images>();
+        List<Images> lstImageSource = new List<Images>(); 
         Image imgOriginal;
         int check = 0;
         System.Windows.Forms.Timer MyTimer;
@@ -29,16 +29,14 @@ namespace SyncFileFolder
 
         public syncfilefolder()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             isInit = true;
             this.Text += " _ v" + Application.ProductVersion;
             //INITMoveImage();
             this.pictureViewer.MouseWheel += PictureViewer_MouseWheel;
             this.metroTabControl.SelectTab(0);
         }
-
-
-
+         
         private Point firstPoint = new Point();
 
         #region SyncerTab
@@ -377,6 +375,82 @@ namespace SyncFileFolder
             labISO.Text = imageExif[2].Tags[3].Description;
             labDevice.Text = imageExif[1].Tags[1].Description;
 
+        }
+
+
+        // select Images
+        
+
+        private void metroSelectImage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var lstImageNumberName = metroAreaTxt.Text.Replace(" ", "").Replace("\r", "").Replace("\n","").Trim().Split(','); 
+                // check url Origination and Destination
+                if (System.IO.Directory.Exists(metrotxtTofolder.Text) && System.IO.Directory.Exists(metroTxtFromFolder.Text))
+                {
+                    // get file on Originatio 
+                    var filesOriginations = System.IO.Directory.GetFiles(metroTxtFromFolder.Text, "*.*", SearchOption.TopDirectoryOnly); 
+
+                    var fileOriginPath = filesOriginations.Select(c => Path.GetFileName(c));
+                    if(lstImageNumberName != null && lstImageNumberName.Length > 0)
+                    foreach (var number in lstImageNumberName)
+                    {
+                            foreach (var file in filesOriginations)
+                            {
+                                if (Path.GetFileName(file).ToLower().Contains(number.ToLower()))
+                                {
+                                    var destFile = Path.Combine(metrotxtTofolder.Text, Path.GetFileName(file));
+                                    if (metroChkCopy.Checked)
+                                        File.Copy(file, destFile, true);
+                                    else
+                                    {
+                                        if (File.Exists(destFile))
+                                            File.Delete(destFile);
+                                        File.Move(file, destFile);
+                                    }
+                                        
+                                }
+                            }
+                        
+                    }
+                    // get files on Destination
+                    // delete files on Destination
+                }
+                MessageBox.Show("Successfully!", "Select file done.", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void metroBtnFromFolder_Click(object sender, EventArgs e)
+        {
+            if (folderFrom.ShowDialog() == DialogResult.OK)
+            {
+                metroTxtFromFolder.Text = folderFrom.SelectedPath;
+                Environment.SpecialFolder root = folderFrom.RootFolder;
+            }
+        }
+
+        private void metroBtnToFolder_Click(object sender, EventArgs e)
+        {
+            if (folderTo.ShowDialog() == DialogResult.OK)
+            {
+                metrotxtTofolder.Text = folderTo.SelectedPath;
+                Environment.SpecialFolder root = folderTo.RootFolder;
+            }
+        }
+
+        private void metroChkMove_CheckedChanged(object sender, EventArgs e)
+        {
+            metroChkCopy.Checked = !metroChkMove.Checked;
+        }
+
+        private void metroChkCopy_CheckedChanged(object sender, EventArgs e)
+        {
+            metroChkMove.Checked = !metroChkCopy.Checked;
         }
     }
 }

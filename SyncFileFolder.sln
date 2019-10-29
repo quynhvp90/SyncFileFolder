@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncFileFolder", "SyncFileF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerImage", "ViewerImage\ViewerImage.csproj", "{F9EC5D12-0EE1-42D7-A5C6-FA8D157F4FE3}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Create Setup", "Create Setup\Create Setup.vdproj", "{40522F58-FABF-49FD-B7B6-27E74C367414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{F9EC5D12-0EE1-42D7-A5C6-FA8D157F4FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9EC5D12-0EE1-42D7-A5C6-FA8D157F4FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9EC5D12-0EE1-42D7-A5C6-FA8D157F4FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40522F58-FABF-49FD-B7B6-27E74C367414}.Debug|Any CPU.ActiveCfg = Debug
+		{40522F58-FABF-49FD-B7B6-27E74C367414}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

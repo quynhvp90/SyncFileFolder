@@ -72,6 +72,9 @@
             this.groupBoxListFiles = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.metroGridListImage = new MetroFramework.Controls.MetroGrid();
+            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupButtonAction = new System.Windows.Forms.GroupBox();
             this.pic_delete = new System.Windows.Forms.PictureBox();
             this.pic_save = new System.Windows.Forms.PictureBox();
@@ -80,13 +83,26 @@
             this.groupHeader = new System.Windows.Forms.GroupBox();
             this.metroTextBoxShowPath = new MetroFramework.Controls.MetroTextBox();
             this.metroButtonBrowser = new MetroFramework.Controls.MetroButton();
+            this.metroTabSelectImage = new MetroFramework.Controls.MetroTabPage();
+            this.groupBoxListNumber = new System.Windows.Forms.GroupBox();
+            this.metroAreaTxt = new MetroFramework.Controls.MetroTextBox();
+            this.metroSelectImage = new MetroFramework.Controls.MetroButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.metroChkMove = new MetroFramework.Controls.MetroCheckBox();
+            this.metroChkCopy = new MetroFramework.Controls.MetroCheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labNameFolder = new System.Windows.Forms.Label();
+            this.metrotxtTofolder = new MetroFramework.Controls.MetroTextBox();
+            this.metroTxtFromFolder = new MetroFramework.Controls.MetroTextBox();
+            this.metroBtnToFolder = new MetroFramework.Controls.MetroButton();
+            this.metroBtnFromFolder = new MetroFramework.Controls.MetroButton();
             this.folderOrigination = new System.Windows.Forms.FolderBrowserDialog();
             this.folderDestination = new System.Windows.Forms.FolderBrowserDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
-            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.folderFrom = new System.Windows.Forms.FolderBrowserDialog();
+            this.folderTo = new System.Windows.Forms.FolderBrowserDialog();
             this.metroTabControl.SuspendLayout();
             this.metroTabPageSync.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -106,23 +122,27 @@
             this.groupBoxListFiles.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
             this.groupButtonAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_save)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).BeginInit();
             this.groupHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
+            this.metroTabSelectImage.SuspendLayout();
+            this.groupBoxListNumber.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl
             // 
             this.metroTabControl.Controls.Add(this.metroTabPageSync);
             this.metroTabControl.Controls.Add(this.metroTabPageViewImage);
+            this.metroTabControl.Controls.Add(this.metroTabSelectImage);
             this.metroTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.SelectedIndex = 0;
+            this.metroTabControl.SelectedIndex = 2;
             this.metroTabControl.Size = new System.Drawing.Size(816, 708);
             this.metroTabControl.TabIndex = 1;
             this.metroTabControl.UseSelectable = true;
@@ -631,6 +651,25 @@
             this.metroGridListImage.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
             this.metroGridListImage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroGridListImage_KeyDown);
             // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imagesBindingSource
+            // 
+            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
+            // 
             // groupButtonAction
             // 
             this.groupButtonAction.BackColor = System.Drawing.Color.Transparent;
@@ -743,30 +782,189 @@
             this.metroButtonBrowser.UseSelectable = true;
             this.metroButtonBrowser.Click += new System.EventHandler(this.metroButtonBrowser_Click);
             // 
+            // metroTabSelectImage
+            // 
+            this.metroTabSelectImage.Controls.Add(this.groupBoxListNumber);
+            this.metroTabSelectImage.Controls.Add(this.groupBox6);
+            this.metroTabSelectImage.HorizontalScrollbarBarColor = true;
+            this.metroTabSelectImage.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabSelectImage.HorizontalScrollbarSize = 10;
+            this.metroTabSelectImage.Location = new System.Drawing.Point(4, 38);
+            this.metroTabSelectImage.Name = "metroTabSelectImage";
+            this.metroTabSelectImage.Size = new System.Drawing.Size(808, 666);
+            this.metroTabSelectImage.TabIndex = 2;
+            this.metroTabSelectImage.Text = "Select Image";
+            this.metroTabSelectImage.VerticalScrollbarBarColor = true;
+            this.metroTabSelectImage.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabSelectImage.VerticalScrollbarSize = 10;
+            // 
+            // groupBoxListNumber
+            // 
+            this.groupBoxListNumber.Controls.Add(this.metroAreaTxt);
+            this.groupBoxListNumber.Controls.Add(this.metroSelectImage);
+            this.groupBoxListNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxListNumber.Location = new System.Drawing.Point(0, 119);
+            this.groupBoxListNumber.Name = "groupBoxListNumber";
+            this.groupBoxListNumber.Size = new System.Drawing.Size(808, 547);
+            this.groupBoxListNumber.TabIndex = 7;
+            this.groupBoxListNumber.TabStop = false;
+            this.groupBoxListNumber.Text = "List Number Image (number1, number2,...)";
+            // 
+            // metroAreaTxt
+            // 
+            this.metroAreaTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroAreaTxt.Lines = new string[0];
+            this.metroAreaTxt.Location = new System.Drawing.Point(3, 16);
+            this.metroAreaTxt.MaxLength = 32767;
+            this.metroAreaTxt.Multiline = true;
+            this.metroAreaTxt.Name = "metroAreaTxt";
+            this.metroAreaTxt.PasswordChar = '\0';
+            this.metroAreaTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroAreaTxt.SelectedText = "";
+            this.metroAreaTxt.Size = new System.Drawing.Size(802, 462);
+            this.metroAreaTxt.TabIndex = 0;
+            this.metroAreaTxt.UseSelectable = true;
+            // 
+            // metroSelectImage
+            // 
+            this.metroSelectImage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.metroSelectImage.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.metroSelectImage.Location = new System.Drawing.Point(3, 478);
+            this.metroSelectImage.Name = "metroSelectImage";
+            this.metroSelectImage.Size = new System.Drawing.Size(802, 66);
+            this.metroSelectImage.TabIndex = 0;
+            this.metroSelectImage.Text = "Select Image";
+            this.metroSelectImage.UseSelectable = true;
+            this.metroSelectImage.Click += new System.EventHandler(this.metroSelectImage_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.metroChkMove);
+            this.groupBox6.Controls.Add(this.metroChkCopy);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.labNameFolder);
+            this.groupBox6.Controls.Add(this.metrotxtTofolder);
+            this.groupBox6.Controls.Add(this.metroTxtFromFolder);
+            this.groupBox6.Controls.Add(this.metroBtnToFolder);
+            this.groupBox6.Controls.Add(this.metroBtnFromFolder);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox6.Location = new System.Drawing.Point(0, 0);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(808, 119);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Top directory";
+            // 
+            // metroChkMove
+            // 
+            this.metroChkMove.AutoSize = true;
+            this.metroChkMove.Location = new System.Drawing.Point(235, 63);
+            this.metroChkMove.Name = "metroChkMove";
+            this.metroChkMove.Size = new System.Drawing.Size(53, 15);
+            this.metroChkMove.TabIndex = 6;
+            this.metroChkMove.Text = "Move";
+            this.metroChkMove.UseSelectable = true;
+            this.metroChkMove.CheckedChanged += new System.EventHandler(this.metroChkMove_CheckedChanged);
+            // 
+            // metroChkCopy
+            // 
+            this.metroChkCopy.AutoSize = true;
+            this.metroChkCopy.Checked = true;
+            this.metroChkCopy.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.metroChkCopy.Location = new System.Drawing.Point(139, 63);
+            this.metroChkCopy.Name = "metroChkCopy";
+            this.metroChkCopy.Size = new System.Drawing.Size(51, 15);
+            this.metroChkCopy.TabIndex = 6;
+            this.metroChkCopy.Text = "Copy";
+            this.metroChkCopy.UseSelectable = true;
+            this.metroChkCopy.CheckedChanged += new System.EventHandler(this.metroChkCopy_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(68, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 16);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "To folder:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(85, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 16);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Action:";
+            // 
+            // labNameFolder
+            // 
+            this.labNameFolder.AutoSize = true;
+            this.labNameFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labNameFolder.Location = new System.Drawing.Point(54, 27);
+            this.labNameFolder.Name = "labNameFolder";
+            this.labNameFolder.Size = new System.Drawing.Size(79, 16);
+            this.labNameFolder.TabIndex = 5;
+            this.labNameFolder.Text = "From folder:";
+            // 
+            // metrotxtTofolder
+            // 
+            this.metrotxtTofolder.Lines = new string[0];
+            this.metrotxtTofolder.Location = new System.Drawing.Point(139, 84);
+            this.metrotxtTofolder.MaxLength = 32767;
+            this.metrotxtTofolder.Name = "metrotxtTofolder";
+            this.metrotxtTofolder.PasswordChar = '\0';
+            this.metrotxtTofolder.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metrotxtTofolder.SelectedText = "";
+            this.metrotxtTofolder.Size = new System.Drawing.Size(623, 24);
+            this.metrotxtTofolder.TabIndex = 0;
+            this.metrotxtTofolder.UseSelectable = true;
+            // 
+            // metroTxtFromFolder
+            // 
+            this.metroTxtFromFolder.Lines = new string[0];
+            this.metroTxtFromFolder.Location = new System.Drawing.Point(139, 19);
+            this.metroTxtFromFolder.MaxLength = 32767;
+            this.metroTxtFromFolder.Name = "metroTxtFromFolder";
+            this.metroTxtFromFolder.PasswordChar = '\0';
+            this.metroTxtFromFolder.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTxtFromFolder.SelectedText = "";
+            this.metroTxtFromFolder.Size = new System.Drawing.Size(623, 24);
+            this.metroTxtFromFolder.TabIndex = 0;
+            this.metroTxtFromFolder.UseSelectable = true;
+            // 
+            // metroBtnToFolder
+            // 
+            this.metroBtnToFolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.metroBtnToFolder.Highlight = true;
+            this.metroBtnToFolder.Location = new System.Drawing.Point(768, 84);
+            this.metroBtnToFolder.Name = "metroBtnToFolder";
+            this.metroBtnToFolder.Size = new System.Drawing.Size(32, 24);
+            this.metroBtnToFolder.TabIndex = 4;
+            this.metroBtnToFolder.Text = "...";
+            this.metroBtnToFolder.UseSelectable = true;
+            this.metroBtnToFolder.Click += new System.EventHandler(this.metroBtnToFolder_Click);
+            // 
+            // metroBtnFromFolder
+            // 
+            this.metroBtnFromFolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.metroBtnFromFolder.Highlight = true;
+            this.metroBtnFromFolder.Location = new System.Drawing.Point(768, 19);
+            this.metroBtnFromFolder.Name = "metroBtnFromFolder";
+            this.metroBtnFromFolder.Size = new System.Drawing.Size(32, 24);
+            this.metroBtnFromFolder.TabIndex = 4;
+            this.metroBtnFromFolder.Text = "...";
+            this.metroBtnFromFolder.UseSelectable = true;
+            this.metroBtnFromFolder.Click += new System.EventHandler(this.metroBtnFromFolder_Click);
+            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pathDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imagesBindingSource
-            // 
-            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
             // 
             // syncfilefolder
             // 
@@ -799,13 +997,17 @@
             this.groupBoxListFiles.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
             this.groupButtonAction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_save)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotate_right)).EndInit();
             this.groupHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
+            this.metroTabSelectImage.ResumeLayout(false);
+            this.groupBoxListNumber.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -866,6 +1068,22 @@
         private MetroFramework.Controls.MetroContextMenu metroMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem showInfoToolStripMenuItem;
         private System.Windows.Forms.GroupBox infoGroup;
+        private MetroFramework.Controls.MetroTabPage metroTabSelectImage;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private MetroFramework.Controls.MetroTextBox metroTxtFromFolder;
+        private MetroFramework.Controls.MetroButton metroBtnFromFolder;
+        private System.Windows.Forms.GroupBox groupBoxListNumber;
+        private MetroFramework.Controls.MetroTextBox metroAreaTxt;
+        private MetroFramework.Controls.MetroButton metroSelectImage;
+        private System.Windows.Forms.Label labNameFolder;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private MetroFramework.Controls.MetroTextBox metrotxtTofolder;
+        private MetroFramework.Controls.MetroButton metroBtnToFolder;
+        private System.Windows.Forms.FolderBrowserDialog folderFrom;
+        private System.Windows.Forms.FolderBrowserDialog folderTo;
+        private MetroFramework.Controls.MetroCheckBox metroChkMove;
+        private MetroFramework.Controls.MetroCheckBox metroChkCopy;
     }
 }
 

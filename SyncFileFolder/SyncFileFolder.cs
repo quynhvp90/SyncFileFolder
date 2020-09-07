@@ -12,13 +12,14 @@ using System.Windows.Forms;
 using MetadataExtractor;
 using SyncFileFolder.Adapter;
 using SyncFileFolder.Model;
+using Directory = MetadataExtractor.Directory;
 
 namespace SyncFileFolder
 {
     public partial class syncfilefolder : Form
     {
 
-        List<Images> lstImageSource = new List<Images>(); 
+        List<Images> lstImageSource = new List<Images>();
         Image imgOriginal;
         int check = 0;
         System.Windows.Forms.Timer MyTimer;
@@ -29,14 +30,15 @@ namespace SyncFileFolder
 
         public syncfilefolder()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             isInit = true;
             this.Text += " _ v" + Application.ProductVersion;
             //INITMoveImage();
             this.pictureViewer.MouseWheel += PictureViewer_MouseWheel;
             this.metroTabControl.SelectTab(0);
+            cbxFormat.SelectedIndex = 0;
         }
-         
+
         private Point firstPoint = new Point();
 
         #region SyncerTab
@@ -71,7 +73,7 @@ namespace SyncFileFolder
                 {
                     // get file on Originatio 
                     var filesOriginations = System.IO.Directory.GetFiles(metroTextBoxOrigination.Text, "*.*", SearchOption.TopDirectoryOnly);
-                    var filesDestinations = System.IO.Directory.GetFiles(metroTextBoxDestination.Text, "*.*",SearchOption.TopDirectoryOnly);
+                    var filesDestinations = System.IO.Directory.GetFiles(metroTextBoxDestination.Text, "*.*", SearchOption.TopDirectoryOnly);
                     var fileOriginPath = filesOriginations.Select(c => Path.GetFileNameWithoutExtension(c));
                     var fileDesPath = filesDestinations.Select(c => Path.GetFileNameWithoutExtension(c));
                     var fileDelete = fileDesPath.Where(c => !fileOriginPath.Contains(c));
@@ -194,7 +196,7 @@ namespace SyncFileFolder
                 imagesBindingSource.MovePrevious();
                 imagesBindingSource.ResetCurrentItem();
                 SetImage();
-            }      
+            }
             isKeyLoad = false;
         }
 
@@ -214,7 +216,7 @@ namespace SyncFileFolder
                 imagesBindingSource.MoveNext();
                 imagesBindingSource.ResetCurrentItem();
                 SetImage();
-            }               
+            }
             isKeyLoad = false;
         }
         #endregion
@@ -365,13 +367,13 @@ namespace SyncFileFolder
             infoGroup.Visible = true;
         }
         public void ReadFileInfo(string path)
-        {   
-            var imageExif = ImageMetadataReader.ReadMetadata(path); 
+        {
+            var imageExif = ImageMetadataReader.ReadMetadata(path);
             labFileName.Text = imageExif[9].Tags[0].Description;
-            labDate.Text = imageExif[9].Tags[2].Description;    
-            labFileSize.Text = Math.Round(float.Parse(imageExif[9].Tags[1].Description.Split(' ')[0])/1024/1024, 2) + " MB";
+            labDate.Text = imageExif[9].Tags[2].Description;
+            labFileSize.Text = Math.Round(float.Parse(imageExif[9].Tags[1].Description.Split(' ')[0]) / 1024 / 1024, 2) + " MB";
             labImageSize.Text = imageExif[0].Tags[3].Description.Split(' ')[0] + " x " + imageExif[0].Tags[2].Description.Split(' ')[0];
-            labShot.Text = imageExif[2].Tags[0].Description + " "+ imageExif[2].Tags[1].Description + " " + imageExif[3].Tags[24].Description.Split(' ')[0];
+            labShot.Text = imageExif[2].Tags[0].Description + " " + imageExif[2].Tags[1].Description + " " + imageExif[3].Tags[24].Description.Split(' ')[0];
             labISO.Text = imageExif[2].Tags[3].Description;
             labDevice.Text = imageExif[1].Tags[1].Description;
 
@@ -379,25 +381,47 @@ namespace SyncFileFolder
 
 
         // select Images
-        
+
 
         private void metroSelectImage_Click(object sender, EventArgs e)
         {
             try
             {
-                var lstImageNumberName = metroAreaTxt.Text.Replace(" ", "").Replace("\r", "").Replace("\n","").Trim().Split(','); 
+                var stringTime = DateTime.Now.ToString("yyyyMMdd");
+                var lstImageNumberName = metroAreaTxt.Text.Replace(" ", "").Replace("\r", "").Replace("\n", "").Trim().Split(',');
+                if (System.IO.Directory.Exists(metroTxtFromFolder.Text) &&
+                    (string.IsNullOrEmpty(metrotxtTofolder.Text) || !System.IO.Directory.Exists(metrotxtTofolder.Text)))
+                {
+                    System.IO.Directory.CreateDirectory(metroTxtFromFolder.Text + "\\Quynh_" + stringTime);
+                    metrotxtTofolder.Text = metroTxtFromFolder.Text + "\\Quynh_" + stringTime;
+                }
                 // check url Origination and Destination
                 if (System.IO.Directory.Exists(metrotxtTofolder.Text) && System.IO.Directory.Exists(metroTxtFromFolder.Text))
                 {
                     // get file on Originatio 
-                    var filesOriginations = System.IO.Directory.GetFiles(metroTxtFromFolder.Text, "*.*", SearchOption.TopDirectoryOnly); 
+                    var filesOriginations = System.IO.Directory.GetFiles(metroTxtFromFolder.Text, "*.*", SearchOption.TopDirectoryOnly);
 
                     var fileOriginPath = filesOriginations.Select(c => Path.GetFileName(c));
-                    if(lstImageNumberName != null && lstImageNumberName.Length > 0)
-                    foreach (var number in lstImageNumberName)
+                    if (string.IsNullOrEmpty(cbxFormat.Text))
                     {
+                        MessageBox.Show("Error!", "Please select file format.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (lstImageNumberName != null && lstImageNumberName.Length > 0)
+                    {  foreach (var number in lstImageNumberName)
+                        {
                             foreach (var file in filesOriginations)
                             {
+                                var extension = Path.GetExtension(file);
+                                if (string.IsNullOrEmpty(extension))
+                                {
+                                    continue;
+                                }
+
+                                if (extension.Replace(".", "").Trim().ToLower() != cbxFormat.Text.Trim().ToLower())
+                                {
+                                    continue;
+                                }
                                 if (Path.GetFileName(file).ToLower().Contains(number.ToLower()))
                                 {
                                     var destFile = Path.Combine(metrotxtTofolder.Text, Path.GetFileName(file));
@@ -409,10 +433,12 @@ namespace SyncFileFolder
                                             File.Delete(destFile);
                                         File.Move(file, destFile);
                                     }
-                                        
+
                                 }
                             }
-                        
+
+                        }
+                        System.Diagnostics.Process.Start("explorer", metrotxtTofolder.Text);
                     }
                     // get files on Destination
                     // delete files on Destination
@@ -451,6 +477,22 @@ namespace SyncFileFolder
         private void metroChkCopy_CheckedChanged(object sender, EventArgs e)
         {
             metroChkMove.Checked = !metroChkCopy.Checked;
+        }
+
+        private void btnOpenToFolder_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(metrotxtTofolder.Text) && System.IO.Directory.Exists(metrotxtTofolder.Text))
+            {
+                System.Diagnostics.Process.Start("explorer", metrotxtTofolder.Text);
+            }
+        }
+
+        private void btnOpenFromFolder_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(metroTxtFromFolder.Text) && System.IO.Directory.Exists(metroTxtFromFolder.Text))
+            {
+                System.Diagnostics.Process.Start("explorer", metroTxtFromFolder.Text);
+            }
         }
     }
 }

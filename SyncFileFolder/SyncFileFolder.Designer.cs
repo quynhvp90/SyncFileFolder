@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(syncfilefolder));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPageSync = new MetroFramework.Controls.MetroTabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -72,9 +72,6 @@
             this.groupBoxListFiles = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.metroGridListImage = new MetroFramework.Controls.MetroGrid();
-            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupButtonAction = new System.Windows.Forms.GroupBox();
             this.pic_delete = new System.Windows.Forms.PictureBox();
             this.pic_save = new System.Windows.Forms.PictureBox();
@@ -103,6 +100,13 @@
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.folderFrom = new System.Windows.Forms.FolderBrowserDialog();
             this.folderTo = new System.Windows.Forms.FolderBrowserDialog();
+            this.cbxFormat = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnOpenFromFolder = new MetroFramework.Controls.MetroButton();
+            this.btnOpenToFolder = new MetroFramework.Controls.MetroButton();
             this.metroTabControl.SuspendLayout();
             this.metroTabPageSync.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -122,7 +126,6 @@
             this.groupBoxListFiles.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
             this.groupButtonAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_save)).BeginInit();
@@ -132,6 +135,7 @@
             this.metroTabSelectImage.SuspendLayout();
             this.groupBoxListNumber.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl
@@ -217,7 +221,6 @@
             this.metroTextBoxDestination.MaxLength = 32767;
             this.metroTextBoxDestination.Name = "metroTextBoxDestination";
             this.metroTextBoxDestination.PasswordChar = '\0';
-            this.metroTextBoxDestination.ReadOnly = true;
             this.metroTextBoxDestination.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxDestination.SelectedText = "";
             this.metroTextBoxDestination.Size = new System.Drawing.Size(758, 24);
@@ -276,7 +279,6 @@
             this.metroTextBoxOrigination.MaxLength = 32767;
             this.metroTextBoxOrigination.Name = "metroTextBoxOrigination";
             this.metroTextBoxOrigination.PasswordChar = '\0';
-            this.metroTextBoxOrigination.ReadOnly = true;
             this.metroTextBoxOrigination.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxOrigination.SelectedText = "";
             this.metroTextBoxOrigination.Size = new System.Drawing.Size(758, 24);
@@ -605,27 +607,27 @@
             this.metroGridListImage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGridListImage.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGridListImage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridListImage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridListImage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.metroGridListImage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.metroGridListImage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pathDataGridViewTextBoxColumn,
             this.fileNameDataGridViewTextBoxColumn});
             this.metroGridListImage.DataSource = this.imagesBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGridListImage.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGridListImage.DefaultCellStyle = dataGridViewCellStyle5;
             this.metroGridListImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroGridListImage.EnableHeadersVisualStyles = false;
             this.metroGridListImage.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -634,14 +636,14 @@
             this.metroGridListImage.Name = "metroGridListImage";
             this.metroGridListImage.ReadOnly = true;
             this.metroGridListImage.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridListImage.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridListImage.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGridListImage.RowHeadersVisible = false;
             this.metroGridListImage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridListImage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -650,25 +652,6 @@
             this.metroGridListImage.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
             this.metroGridListImage.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridListImage_CellDoubleClick);
             this.metroGridListImage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroGridListImage_KeyDown);
-            // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pathDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imagesBindingSource
-            // 
-            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
             // 
             // groupButtonAction
             // 
@@ -803,9 +786,9 @@
             this.groupBoxListNumber.Controls.Add(this.metroAreaTxt);
             this.groupBoxListNumber.Controls.Add(this.metroSelectImage);
             this.groupBoxListNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxListNumber.Location = new System.Drawing.Point(0, 119);
+            this.groupBoxListNumber.Location = new System.Drawing.Point(0, 145);
             this.groupBoxListNumber.Name = "groupBoxListNumber";
-            this.groupBoxListNumber.Size = new System.Drawing.Size(808, 547);
+            this.groupBoxListNumber.Size = new System.Drawing.Size(808, 521);
             this.groupBoxListNumber.TabIndex = 7;
             this.groupBoxListNumber.TabStop = false;
             this.groupBoxListNumber.Text = "List Number Image (number1, number2,...)";
@@ -821,7 +804,7 @@
             this.metroAreaTxt.PasswordChar = '\0';
             this.metroAreaTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroAreaTxt.SelectedText = "";
-            this.metroAreaTxt.Size = new System.Drawing.Size(802, 462);
+            this.metroAreaTxt.Size = new System.Drawing.Size(802, 436);
             this.metroAreaTxt.TabIndex = 0;
             this.metroAreaTxt.UseSelectable = true;
             // 
@@ -829,7 +812,7 @@
             // 
             this.metroSelectImage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroSelectImage.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.metroSelectImage.Location = new System.Drawing.Point(3, 478);
+            this.metroSelectImage.Location = new System.Drawing.Point(3, 452);
             this.metroSelectImage.Name = "metroSelectImage";
             this.metroSelectImage.Size = new System.Drawing.Size(802, 66);
             this.metroSelectImage.TabIndex = 0;
@@ -839,19 +822,23 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.cbxFormat);
             this.groupBox6.Controls.Add(this.metroChkMove);
             this.groupBox6.Controls.Add(this.metroChkCopy);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.labNameFolder);
             this.groupBox6.Controls.Add(this.metrotxtTofolder);
             this.groupBox6.Controls.Add(this.metroTxtFromFolder);
+            this.groupBox6.Controls.Add(this.btnOpenToFolder);
             this.groupBox6.Controls.Add(this.metroBtnToFolder);
+            this.groupBox6.Controls.Add(this.btnOpenFromFolder);
             this.groupBox6.Controls.Add(this.metroBtnFromFolder);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(808, 119);
+            this.groupBox6.Size = new System.Drawing.Size(808, 145);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Top directory";
@@ -919,7 +906,7 @@
             this.metrotxtTofolder.PasswordChar = '\0';
             this.metrotxtTofolder.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metrotxtTofolder.SelectedText = "";
-            this.metrotxtTofolder.Size = new System.Drawing.Size(623, 24);
+            this.metrotxtTofolder.Size = new System.Drawing.Size(565, 24);
             this.metrotxtTofolder.TabIndex = 0;
             this.metrotxtTofolder.UseSelectable = true;
             // 
@@ -932,7 +919,7 @@
             this.metroTxtFromFolder.PasswordChar = '\0';
             this.metroTxtFromFolder.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTxtFromFolder.SelectedText = "";
-            this.metroTxtFromFolder.Size = new System.Drawing.Size(623, 24);
+            this.metroTxtFromFolder.Size = new System.Drawing.Size(565, 24);
             this.metroTxtFromFolder.TabIndex = 0;
             this.metroTxtFromFolder.UseSelectable = true;
             // 
@@ -940,7 +927,7 @@
             // 
             this.metroBtnToFolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.metroBtnToFolder.Highlight = true;
-            this.metroBtnToFolder.Location = new System.Drawing.Point(768, 84);
+            this.metroBtnToFolder.Location = new System.Drawing.Point(710, 84);
             this.metroBtnToFolder.Name = "metroBtnToFolder";
             this.metroBtnToFolder.Size = new System.Drawing.Size(32, 24);
             this.metroBtnToFolder.TabIndex = 4;
@@ -952,7 +939,7 @@
             // 
             this.metroBtnFromFolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.metroBtnFromFolder.Highlight = true;
-            this.metroBtnFromFolder.Location = new System.Drawing.Point(768, 19);
+            this.metroBtnFromFolder.Location = new System.Drawing.Point(710, 19);
             this.metroBtnFromFolder.Name = "metroBtnFromFolder";
             this.metroBtnFromFolder.Size = new System.Drawing.Size(32, 24);
             this.metroBtnFromFolder.TabIndex = 4;
@@ -965,6 +952,75 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // cbxFormat
+            // 
+            this.cbxFormat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxFormat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxFormat.FormattingEnabled = true;
+            this.cbxFormat.Items.AddRange(new object[] {
+            "CR2",
+            "NEF",
+            "JPG",
+            "PNG",
+            "TIF"});
+            this.cbxFormat.Location = new System.Drawing.Point(139, 114);
+            this.cbxFormat.Name = "cbxFormat";
+            this.cbxFormat.Size = new System.Drawing.Size(80, 21);
+            this.cbxFormat.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(80, 119);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 16);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Format:";
+            // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imagesBindingSource
+            // 
+            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
+            // 
+            // btnOpenFromFolder
+            // 
+            this.btnOpenFromFolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnOpenFromFolder.Highlight = true;
+            this.btnOpenFromFolder.Location = new System.Drawing.Point(748, 19);
+            this.btnOpenFromFolder.Name = "btnOpenFromFolder";
+            this.btnOpenFromFolder.Size = new System.Drawing.Size(43, 24);
+            this.btnOpenFromFolder.TabIndex = 4;
+            this.btnOpenFromFolder.Text = "Open";
+            this.btnOpenFromFolder.UseSelectable = true;
+            this.btnOpenFromFolder.Click += new System.EventHandler(this.btnOpenFromFolder_Click);
+            // 
+            // btnOpenToFolder
+            // 
+            this.btnOpenToFolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnOpenToFolder.Highlight = true;
+            this.btnOpenToFolder.Location = new System.Drawing.Point(748, 84);
+            this.btnOpenToFolder.Name = "btnOpenToFolder";
+            this.btnOpenToFolder.Size = new System.Drawing.Size(43, 24);
+            this.btnOpenToFolder.TabIndex = 4;
+            this.btnOpenToFolder.Text = "Open";
+            this.btnOpenToFolder.UseSelectable = true;
+            this.btnOpenToFolder.Click += new System.EventHandler(this.btnOpenToFolder_Click);
             // 
             // syncfilefolder
             // 
@@ -997,7 +1053,6 @@
             this.groupBoxListFiles.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
             this.groupButtonAction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_save)).EndInit();
@@ -1008,6 +1063,7 @@
             this.groupBoxListNumber.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1084,6 +1140,10 @@
         private System.Windows.Forms.FolderBrowserDialog folderTo;
         private MetroFramework.Controls.MetroCheckBox metroChkMove;
         private MetroFramework.Controls.MetroCheckBox metroChkCopy;
+        private System.Windows.Forms.ComboBox cbxFormat;
+        private System.Windows.Forms.Label label8;
+        private MetroFramework.Controls.MetroButton btnOpenToFolder;
+        private MetroFramework.Controls.MetroButton btnOpenFromFolder;
     }
 }
 

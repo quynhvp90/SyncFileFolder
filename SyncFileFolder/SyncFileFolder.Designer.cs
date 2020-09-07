@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(syncfilefolder));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPageSync = new MetroFramework.Controls.MetroTabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -102,11 +102,11 @@
             this.folderTo = new System.Windows.Forms.FolderBrowserDialog();
             this.cbxFormat = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnOpenFromFolder = new MetroFramework.Controls.MetroButton();
+            this.btnOpenToFolder = new MetroFramework.Controls.MetroButton();
             this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnOpenFromFolder = new MetroFramework.Controls.MetroButton();
-            this.btnOpenToFolder = new MetroFramework.Controls.MetroButton();
             this.metroTabControl.SuspendLayout();
             this.metroTabPageSync.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -607,27 +607,27 @@
             this.metroGridListImage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGridListImage.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGridListImage.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridListImage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridListImage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGridListImage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.metroGridListImage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pathDataGridViewTextBoxColumn,
             this.fileNameDataGridViewTextBoxColumn});
             this.metroGridListImage.DataSource = this.imagesBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGridListImage.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGridListImage.DefaultCellStyle = dataGridViewCellStyle2;
             this.metroGridListImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroGridListImage.EnableHeadersVisualStyles = false;
             this.metroGridListImage.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -636,14 +636,14 @@
             this.metroGridListImage.Name = "metroGridListImage";
             this.metroGridListImage.ReadOnly = true;
             this.metroGridListImage.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridListImage.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGridListImage.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGridListImage.RowHeadersVisible = false;
             this.metroGridListImage.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridListImage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -979,25 +979,6 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Format:";
             // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pathDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imagesBindingSource
-            // 
-            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
-            // 
             // btnOpenFromFolder
             // 
             this.btnOpenFromFolder.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -1021,6 +1002,25 @@
             this.btnOpenToFolder.Text = "Open";
             this.btnOpenToFolder.UseSelectable = true;
             this.btnOpenToFolder.Click += new System.EventHandler(this.btnOpenToFolder_Click);
+            // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imagesBindingSource
+            // 
+            this.imagesBindingSource.DataSource = typeof(SyncFileFolder.Model.Images);
             // 
             // syncfilefolder
             // 
